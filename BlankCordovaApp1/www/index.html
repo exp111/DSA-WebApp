@@ -1,29 +1,120 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <!--
-        Passen Sie die Inhaltssicherheitsrichtlinie im META-Tag unten nach Bedarf an. Fügen Sie "default-src" die Option "unsafe-inline" hinzu, um Inline-JavaScript zu aktivieren.
-        Details finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=617521".
-    -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>BlankCordovaApp1</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Die Verbindung mit dem Gerät wird hergestellt.</p>
-                <p class="event received">Das Gerät ist bereit.</p>
-            </div>
+﻿<!DOCTYPE html>
+<html lang="en" manifest="app.manifest">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon-precomposed" href="../images/dsa_demonicon.jpg">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/images/cordova.png">
+
+    <title>DSA 5</title>
+
+    <script src="../scripts/SiteSwitcher.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../scripts/offline.js"></script>
+    <script src="../scripts/dsa.js"></script>
+    <script src="../scripts/w3.js"></script>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/navmenu-reveal.css" rel="stylesheet">
+    <link href="../css/navbar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navmenu navmenu-inverse navmenu-fixed-left">
+        <a class="navmenu-brand" href="../index.html/">DSA 5</a>
+        <!--Charakter-->
+        <ul class="nav navmenu-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Charakter <b class="caret"></b></a>
+                <ul class="dropdown-menu navmenu-nav">
+                    <li><a href="#">Persönliche Daten</a></li>
+                    <li><a href="#">Eigenschaften</a></li>
+                    <li><a href="#">Fertigkeiten</a></li>
+                    <li><a href="#">Vor- & Nachteile</a></li>
+                    <li><a href="#">Zauber & Liturgien</a></li>
+                    <li><a href="#">Inventar</a></li>
+                    <li><a href="#">Sonderfertigkeiten</a></li>
+                </ul>
+            </li>
+            </ul>
+        <!--Live Mode-->
+        <ul class="nav navmenu-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Live Modus <b class="caret"></b></a>
+                <ul class="dropdown-menu navmenu-nav">
+                    <li><a href="#">Persönliche Daten</a></li>
+                    <li><a href="#">Eigenschaften</a></li>
+                    <li><a href="#">Fertigkeiten</a></li>
+                    <li><a href="#">Vor- & Nachteile</a></li>
+                    <li><a href="#">Zauber & Liturgien</a></li>
+                    <li><a href="#">Inventar</a></li>
+                    <li><a href="#">Sonderfertigkeiten</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--Settings-->
+        <ul class="nav navmenu-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+                <ul class="dropdown-menu navmenu-nav">
+                    <li><a href="#">Persönliche Daten</a></li>
+                    <li><a href="#">Eigenschaften</a></li>
+                    <li><a href="#">Fertigkeiten</a></li>
+                    <li><a href="#">Vor- & Nachteile</a></li>
+                    <li><a href="#">Zauber & Liturgien</a></li>
+                    <li><a href="#">Inventar</a></li>
+                    <li><a href="#">Sonderfertigkeiten</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="canvas">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <ul class="nav navbar-nav pull-right">
+                <li id="editLinkLi"><a id="editLink" href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                <li id="saveLinkLi"><a id="saveLink" href="#"><span class="glyphicon glyphicon-floppy-save"></span>Save</a></li>
+            </ul>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+
+        <div w3-include-html="content.html"></div>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Off Canvas Reveal Menu Template</h1>
+            </div>
+            <p class="lead">This example demonstrates the use of the offcanvas plugin with a reveal effect.</p>
+            <p>On the contrary of the push effect, the menu doesn't move with the canvas.</p>
+            <p>You get the reveal effect by wrapping the content in a div and setting the <code>canvas</code> option to target that div.</p>
+            <p>Note that in this example, the navmenu doesn't have the <code>offcanvas</code> class, but is placed under the canvas by setting the <code>z-index</code>.</p>
+            <p>Also take a look at the examples for a navmenu with <a href="../navmenu">slide in effect</a> and <a href="../navmenu-push">push effect</a>.</p>
+        </div><!-- /.container -->
+    </div>
+
+    <script>
+        w3.includeHTML();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../scripts/jquery-1.10.2.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/jasny-bootstrap.min.js"></script>
+</body>
 </html>
