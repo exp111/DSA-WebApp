@@ -3,10 +3,13 @@ CACHE MANIFEST
 index.html
 menu.html
 template.html
+charInfos.html
+charStats.html
 css/bootstrap.min.css
 css/jasny-bootstrap.min.css
 css/navmenu-reveal.css
 css/navbar.css
+css/stats.css
 fonts/glyphicons-halflings-regular.eot
 fonts/glyphicons-halflings-regular.svg
 fonts/glyphicons-halflings-regular.ttf
