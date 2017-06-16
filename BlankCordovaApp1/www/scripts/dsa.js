@@ -4,20 +4,30 @@
     var editlink = document.getElementById("editLink");
     var savelink = document.getElementById("saveLink");
 
-    var stats = false;
+    var statsEnabled = false;
+    var statsID = ["statsMU", "statsKL", "statsIN", "statsCH", "statsFF", "statsGE", "statsKO", "statsKK"];
+    var statsValue = ["", "", "", "", "", "", "", ""]
+
+    //local storage
+    //stats
+    if (!localStorage.statsValue) {
+        localStorage.statsValue = [];
+    }
 
     //Stats
     if (document.URL.indexOf("charStats.html") >= 0) {
-        stats = true;
-        var statsMU = document.getElementById("statsMU");
-        var statsKL = document.getElementById("statsKL");
-        var statsIN = document.getElementById("statsIN");
-        var statsCH = document.getElementById("statsCH");
-        var statsFF = document.getElementById("statsFF");
-        var statsGE = document.getElementById("statsGE");
-        var statsKO = document.getElementById("statsKO");
-        var statsKK = document.getElementById("statsKK");
+        statsEnabled = true;
+        var statsObjects = [];
+        for (var i in statsID) {
+            statsObjects[i] = document.getElementById(statsID[i]);
+        }
+        
         //check for local storage -> input into textfield
+        for (var i in statsObjects) {
+            if (isStat(localStorage.statsValue[i])) {
+                statsObjects[i].value = localStorage.statsValue[i];
+            }
+        }
     }
 
     editlink.onclick = function () {
@@ -27,15 +37,13 @@
         //Disable write lock on the input fields
 
         //Stats
-        if (stats) {
-            statsMU.removeAttribute("readonly");
-            statsKL.removeAttribute("readonly");
-            statsIN.removeAttribute("readonly");
-            statsCH.removeAttribute("readonly");
-            statsFF.removeAttribute("readonly");
-            statsGE.removeAttribute("readonly");
-            statsKO.removeAttribute("readonly");
-            statsKK.removeAttribute("readonly");
+        if (statsEnabled) {
+            for (var i in statsObjects) {
+                statsObjects[i].removeAttribute("readonly");
+                if (!isStat(statsObjects[i].value)) {
+                    statsObjects[i].value = "";
+                }
+            }
         }
 
         return false;
@@ -48,20 +56,40 @@
         //Enable write lock again
 
         //Stats
-        if (stats) {
-            statsMU.setAttribute('readonly', 'readonly');
-            statsKL.setAttribute('readonly', 'readonly');
-            statsIN.setAttribute('readonly', 'readonly');
-            statsCH.setAttribute('readonly', 'readonly');
-            statsFF.setAttribute('readonly', 'readonly');
-            statsGE.setAttribute('readonly', 'readonly');
-            statsKO.setAttribute('readonly', 'readonly');
-            statsKK.setAttribute('readonly', 'readonly');
+        if (statsEnabled) {
+            for (var i in statsObjects) {
+                statsObjects[i].setAttribute('readonly', 'readonly');
+            }
+            //Save changes to local storage as array!
+            for (var i in statsObjects) {
+                saveNumberToLocalStorage(statsObjects[i], localStorage.statsValue[i]);
+            }
         }
 
-        //Save changes to local storage
         return false;
     }
+}
 
-    
+function saveNumberToLocalStorage(object, variable) {
+    var value = object.value;
+    if (isStat(value)) {
+        variable = value;
+    } else {
+        if (object.value != "") {
+            object.value = "Invalid Input";
+        }
+    }
+}
+
+function isStat(string) {
+    var number = parseInt(string);
+    if (!isNaN(number)) {
+        if (number >= 0 && number % 1 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }
