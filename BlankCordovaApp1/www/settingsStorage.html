@@ -40,9 +40,26 @@
 
         <div class="container">
             <div class="page-header">
-                <h1></h1>
+                <h1>Storage</h1>
             </div>
-            <!--Insert Text here-->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" onclick="localStorage.clear(); initLocalStorage()">Reset Local Storage</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" onclick="window.applicationCache.update()">Reset Offline Cache</button>
+                </div>
+            <br>
+            <br />
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" onclick="importLocalStorage()">Import Storage</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" onclick="exportLocalStorage()">Export Storage</button>
+            </div>
+            <div class="form-group">
+                <label for="localStorageField">Input/Output:</label>
+                <textarea class="form-control" rows="5" id="localStorageField"></textarea>
+            </div>
         </div>
     </div>
 

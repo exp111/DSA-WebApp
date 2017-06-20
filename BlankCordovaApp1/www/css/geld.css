@@ -1,0 +1,51 @@
+﻿#addonDukaten {
+    background-color: gold;
+    border-radius: 0px;
+    border: 2px solid gold;
+}
+
+#inventarDukaten {
+    border: 2px solid gold;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#addonSilber {
+    background-color: silver;
+    border-radius: 0px;
+    border: 2px solid silver;
+}
+
+#inventarSilber {
+    border: 2px solid silver;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#addonHeller {
+    background-color: chocolate;
+    border-radius: 0px;
+    border: 2px solid chocolate;
+}
+
+#inventarHeller {
+    border: 2px solid chocolate;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#addonKreuzer {
+    background-color: grey;
+    border-radius: 0px;
+    border: 2px solid grey;
+}
+
+#inventarKreuzer {
+    border: 2px solid grey;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

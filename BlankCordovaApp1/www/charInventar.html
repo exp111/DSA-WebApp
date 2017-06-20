@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en" manifest="app.manifest">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <title>DSA 5</title>
+
+    <script src="../scripts/SiteSwitcher.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../scripts/offline.js"></script>
+    <script src="../scripts/dsa.js"></script>
+    <script src="../scripts/w3.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/navmenu-reveal.css" rel="stylesheet">
+    <link href="../css/navbar.css" rel="stylesheet">
+    <link href="../css/geld.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div w3-include-html="menu.html"></div>
+
+    <div class="canvas">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <ul class="nav navbar-nav pull-right">
+                <li id="editLinkLi"><a id="editLink" href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                <li id="saveLinkLi"><a id="saveLink" href="#"><span class="glyphicon glyphicon-floppy-save"></span>Save</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Inventar</h1>
+            </div>
+            <h4><b>Inventar</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="tableInventar">
+                <thead>
+                    <tr>
+                        <th width="70%">
+                            Gegenstandsname
+                        </th>
+                        <th width="15%">
+                            Wert
+                        </th>
+                        <th width="15%">
+                            Gewicht
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="set-form">
+                <input type="button" id="addRowInventory" onclick='tableAddRowWithInputs(document.getElementById("tableInventar"), 3); increasedTableRows("tableInventar")' value="Füge Zeile hinzu" class="btn btn-info" />
+            </div>
+            <br />
+            <h4><b>Ausr&uuml;stung</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="tableAusrustung">
+                <thead>
+                    <tr>
+                        <th width="55%">
+                            Rüstungsname
+                        </th>
+                        <th width="15%">
+                            ST.
+                        </th>
+                        <th width="15%">
+                            RS
+                        </th>
+                        <th width="15%">
+                            BE
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="set-form">
+                <input type="button" id="addRowInventory" onclick='tableAddRowWithInputs(document.getElementById("tableAusrustung"), 4); increasedTableRows("tableAusrustung")' value="Füge Zeile hinzu" class="btn btn-info" />
+            </div>
+            <br />
+            <h4><b>Geldbeutel</b></h4>
+            <div class="input-group">
+                <span class="input-group-addon" id="addonDukaten"><span class="glyphicon glyphicon-copyright-mark"></span></span>
+                <input type="text" class="form-control" id="inventarDukaten" placeholder="Dukaten" min="0" step="1" disabled>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="addonSilber"><span class="glyphicon glyphicon-copyright-mark"></span></span>
+                <input type="text" class="form-control" id="inventarSilber" placeholder="Silbertaler" min="0" step="1" disabled>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="addonHeller"><span class="glyphicon glyphicon-copyright-mark"></span></span>
+                <input type="text" class="form-control" id="inventarHeller" placeholder="Heller" min="0" step="1" disabled>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="addonKreuzer"><span class="glyphicon glyphicon-copyright-mark"></span></span>
+                <input type="text" class="form-control" id="inventarKreuzer" placeholder="Kreuzer" min="0" step="1" disabled>
+            </div>
+</div>
+    </div>
+
+    <script>
+        w3.includeHTML();
+    </script>
+
+    <script src="../scripts/jquery-1.10.2.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/jasny-bootstrap.min.js"></script>
+</body>
+</html>

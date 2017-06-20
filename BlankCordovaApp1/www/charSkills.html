@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" manifest="app.manifest">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <title>DSA 5</title>
+
+    <script src="../scripts/SiteSwitcher.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../scripts/offline.js"></script>
+    <script src="../scripts/dsa.js"></script>
+    <script src="../scripts/w3.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/navmenu-reveal.css" rel="stylesheet">
+    <link href="../css/navbar.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div w3-include-html="menu.html"></div>
+
+    <div class="canvas">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <ul class="nav navbar-nav pull-right">
+                <li id="editLinkLi"><a id="editLink" href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                <li id="saveLinkLi"><a id="saveLink" href="#"><span class="glyphicon glyphicon-floppy-save"></span>Save</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Fertigkeiten</h1>
+            </div>
+            <h4><b>K&ouml;rpertalente</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="skillsKoerper">
+                <thead>
+                    <tr>
+                        <th>
+                            Talent
+                        </th>
+                        <th>
+                            P1
+                        </th>
+                        <th>
+                            P2
+                        </th>
+                        <th>
+                            P3
+                        </th>
+                        <th>
+                            BE
+                        </th>
+                        <th>
+                            SF.
+                        </th>
+                        <th>
+                            FW
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsFliegen" placeholder="0" disabled disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsGaukeleien" placeholder="0" disabled disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsKlettern" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsKorperbeherrschung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsKraftakt" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsReiten" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSchwimmen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSelbstbeherrschung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSingen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSinnesscharfe" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsTanzen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsTaschendiebstahl" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsVerbergen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsZechen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+
+            <h4><b>Gesellschaftstalente</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="skillsGesellschaft">
+                <thead>
+                    <tr>
+                        <th>
+                            Talent
+                        </th>
+                        <th>
+                            P1
+                        </th>
+                        <th>
+                            P2
+                        </th>
+                        <th>
+                            P3
+                        </th>
+                        <th>
+                            BE
+                        </th>
+                        <th>
+                            SF.
+                        </th>
+                        <th>
+                            FW
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsBekehren" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsBetoren" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsEinschuchtern" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsEtikette" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsGassenwissen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsMenschenkenntnis" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsUberreden" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsVerkleiden" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsWillenskraft" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4><b>Naturtalente</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="skillsNatur">
+                <thead>
+                    <tr>
+                        <th>
+                            Talent
+                        </th>
+                        <th>
+                            P1
+                        </th>
+                        <th>
+                            P2
+                        </th>
+                        <th>
+                            P3
+                        </th>
+                        <th>
+                            BE
+                        </th>
+                        <th>
+                            SF.
+                        </th>
+                        <th>
+                            FW
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsFahrtensuchen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsFesseln" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsFischen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsOrientierung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsPflanzenkunde" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsTierkunde" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsWildnisleben" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4><b>Wissenstalente</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="skillsWissen">
+                <thead>
+                    <tr>
+                        <th>
+                            Talent
+                        </th>
+                        <th>
+                            P1
+                        </th>
+                        <th>
+                            P2
+                        </th>
+                        <th>
+                            P3
+                        </th>
+                        <th>
+                            BE
+                        </th>
+                        <th>
+                            SF.
+                        </th>
+                        <th>
+                            FW
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsBrett" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsGeographie" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsGeschichtswissen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsGotter" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsKriegskunst" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsMagiekunde" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsMechanik" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsRechnen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsRechtskunde" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSagen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSpharenkunde" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSternkunde" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4><b>Handwerkstalente</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="skillsHandwerk">
+                <thead>
+                    <tr>
+                        <th>
+                            Talent
+                        </th>
+                        <th>
+                            P1
+                        </th>
+                        <th>
+                            P2
+                        </th>
+                        <th>
+                            P3
+                        </th>
+                        <th>
+                            BE
+                        </th>
+                        <th>
+                            SF.
+                        </th>
+                        <th>
+                            FW
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsAlchimie" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsBoote" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsFahrzeuge" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsHeilkundeGift" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsHeilkundeKrankheiten" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsHeilkundeSeele" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsHeilkundeWunden" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsHolzbearbeitung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsLebensmittelbearbeitung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsMalen" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsMetallbearbeitung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsMusizieren" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSchlosserknacken" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsSteinbearbeitung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="skillsStoffbearbeitung" placeholder="0" disabled>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
+    </div>
+
+    <script>
+        w3.includeHTML();
+    </script>
+
+    <script src="../scripts/jquery-1.10.2.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/jasny-bootstrap.min.js"></script>
+</body>
+</html>

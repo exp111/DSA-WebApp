@@ -4,7 +4,10 @@ index.html
 menu.html
 template.html
 charInfos.html
+charInventar.html
+charSkills.html
 charStats.html
+settingsStorage.html
 css/bootstrap.min.css
 css/jasny-bootstrap.min.css
 css/navmenu-reveal.css
