@@ -72,10 +72,10 @@ var skillsValue = [skillsKoerperValue, skillsGesellschaftValue, skillsNaturValue
 
 //Inventar
 var inventarEnabled = false;
-var inventarRows = [5, 5];
-var inventarInputs = [3, 4]
-var inventarTableID = ["tableInventar", "tableAusrustung"];
-var inventarValue = [[], []];
+var inventarRows = [5, 3, 3];
+var inventarInputs = [3, 4, 6]
+var inventarTableID = ["tableInventar", "tableRustung", "tableWaffen"];
+var inventarValue = [[], [], []];
 var inventarGeldID = ["inventarDukaten", "inventarSilber", "inventarHeller", "inventarKreuzer"];
 var inventarGeldValue = [];
 
@@ -186,11 +186,9 @@ window.onload = function () {
 
         for (var i in inventarTableObjects) {
             //Insert Rows
-            editMode = true;
             for (var j = 0; j < inventarRows[i]; j++) {
                 tableAddRowWithInputs(inventarTableObjects[i], inventarInputs[i]);
             }
-            editMode = false;
             //Insert Values
             if (localStorage.inventarValue != "") {
                 inventarValue = JSON.parse(localStorage.inventarValue);
@@ -304,6 +302,7 @@ window.onload = function () {
             localStorage.inventarValue = JSON.stringify(inventarValue);
             //Geld
             ObjectsSetAttribute(inventarGeldObjects, "disabled", "disabled");
+            calculateMoney(inventarGeldObjects);
             for (var i in inventarGeldObjects) {
                 inventarGeldValue[i] = getNumberInput(inventarGeldObjects[i]);
             }
@@ -349,10 +348,12 @@ function getNumberInput(object) {
     if (isValidNumber(value)) {
         return value;
     } else {
-        if (object.value != "") {
-            object.value = "Invalid Input";
+        if (value != "") {
+            object.value = parseInt(value);
+            return parseInt(value);
+        } else {
+            return "";
         }
-        return "";
     }
 }
 
@@ -388,7 +389,7 @@ function tableAddRowWithInputs(table, inputCount) {
     var rowContent = "";
     var disabled = "";
     for (var i = 0; i < inputCount; i++) {
-        if (editMode == true) {
+        if (editMode == false) {
             disabled = " disabled"
         }
         rowContent = rowContent + '<td><input type="text" class="form-control"' + disabled + '></td > ';
@@ -434,4 +435,23 @@ function initLocalStorage() {
         localStorage.inventarGeldValue = [];
     }
     
+}
+
+function calculateMoney(objects) {
+    var rest = 0;
+    for (var i in objects) {
+        if (objects[i].value == "") {
+            objects[i].value = 0;
+        }
+    }
+    for (var i = (objects.length - 1); i > 0; i--) {
+        var geld = parseInt(objects[i].value);
+        if (geld >= 10) {
+            var geld2 = parseInt(objects[i - 1].value);
+            rest = (geld % 10);
+            geld2 = geld2 + ((geld - rest) / 10);
+            objects[i].value = rest;
+            objects[i - 1].value = geld2;
+        }
+    }
 }

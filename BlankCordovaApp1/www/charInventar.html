@@ -63,8 +63,8 @@
                 <input type="button" id="addRowInventory" onclick='tableAddRowWithInputs(document.getElementById("tableInventar"), 3); increasedTableRows("tableInventar")' value="Füge Zeile hinzu" class="btn btn-info" />
             </div>
             <br />
-            <h4><b>Ausr&uuml;stung</b></h4>
-            <table class="table table-bordered table-condensed table-responsive" id="tableAusrustung">
+            <h4><b>R&uuml;stung</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="tableRustung">
                 <thead>
                     <tr>
                         <th width="55%">
@@ -83,28 +83,57 @@
                 </thead>
             </table>
             <div class="set-form">
-                <input type="button" id="addRowInventory" onclick='tableAddRowWithInputs(document.getElementById("tableAusrustung"), 4); increasedTableRows("tableAusrustung")' value="Füge Zeile hinzu" class="btn btn-info" />
+                <input type="button" id="addRowInvRustung" onclick='tableAddRowWithInputs(document.getElementById("tableRustung"), 4); increasedTableRows("tableRustung")' value="Füge Zeile hinzu" class="btn btn-info" />
+            </div>
+            <br />
+            <h4><b>Waffen</b></h4>
+            <table class="table table-bordered table-condensed table-responsive" id="tableWaffen">
+                <thead>
+                    <tr>
+                        <th width="25%">
+                            Waffenname
+                        </th>
+                        <th width="25%">
+                            Kampftechnik
+                        </th>
+                        <th width="15%">
+                            TP
+                        </th>
+                        <th width="10%">
+                            AT
+                        </th>
+                        <th width="10%">
+                            PA
+                        </th>
+                        <th width="15%">
+                            Range
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="set-form">
+                <input type="button" id="addRowInvWaffen" onclick='tableAddRowWithInputs(document.getElementById("tableWaffen"), 6); increasedTableRows("tableWaffen")' value="Füge Zeile hinzu" class="btn btn-info" />
             </div>
             <br />
             <h4><b>Geldbeutel</b></h4>
             <div class="input-group">
                 <span class="input-group-addon" id="addonDukaten"><span class="glyphicon glyphicon-copyright-mark"></span></span>
-                <input type="text" class="form-control" id="inventarDukaten" placeholder="Dukaten" min="0" step="1" disabled>
+                <input type="number" class="form-control" id="inventarDukaten" placeholder="Dukaten" min="0" step="1" disabled>
             </div>
             <br>
             <div class="input-group">
                 <span class="input-group-addon" id="addonSilber"><span class="glyphicon glyphicon-copyright-mark"></span></span>
-                <input type="text" class="form-control" id="inventarSilber" placeholder="Silbertaler" min="0" step="1" disabled>
+                <input type="number" class="form-control" id="inventarSilber" placeholder="Silbertaler" min="0" step="1" disabled>
             </div>
             <br>
             <div class="input-group">
                 <span class="input-group-addon" id="addonHeller"><span class="glyphicon glyphicon-copyright-mark"></span></span>
-                <input type="text" class="form-control" id="inventarHeller" placeholder="Heller" min="0" step="1" disabled>
+                <input type="number" class="form-control" id="inventarHeller" placeholder="Heller" min="0" step="1" disabled>
             </div>
             <br>
             <div class="input-group">
                 <span class="input-group-addon" id="addonKreuzer"><span class="glyphicon glyphicon-copyright-mark"></span></span>
-                <input type="text" class="form-control" id="inventarKreuzer" placeholder="Kreuzer" min="0" step="1" disabled>
+                <input type="number" class="form-control" id="inventarKreuzer" placeholder="Kreuzer" min="0" step="1" disabled>
             </div>
 </div>
     </div>
